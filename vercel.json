@@ -24,45 +24,83 @@
       }
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "/homesfy-chat-buddy/apps/api/api/index.js"
+      "source": "/api/(.*)",
+      "destination": "/homesfy-chat-buddy/apps/api/api/index.js"
     },
     {
-      "src": "/widget.js",
-      "dest": "/homesfy-chat-buddy/apps/widget/dist/widget.js",
-      "headers": {
-        "Content-Type": "application/javascript; charset=utf-8",
-        "Cache-Control": "public, max-age=31536000, immutable",
-        "Access-Control-Allow-Origin": "*"
-      }
+      "source": "/widget.js",
+      "destination": "/homesfy-chat-buddy/apps/widget/dist/widget.js"
     },
     {
-      "src": "/style.css",
-      "dest": "/homesfy-chat-buddy/apps/widget/dist/style.css",
-      "headers": {
-        "Content-Type": "text/css; charset=utf-8",
-        "Cache-Control": "public, max-age=31536000, immutable",
-        "Access-Control-Allow-Origin": "*"
-      }
+      "source": "/style.css",
+      "destination": "/homesfy-chat-buddy/apps/widget/dist/style.css"
     },
     {
-      "src": "/assets/(.*)",
-      "dest": "/homesfy-chat-buddy/apps/dashboard/dist/assets/$1",
-      "headers": {
-        "Cache-Control": "public, max-age=31536000, immutable"
-      }
+      "source": "/assets/(.*)",
+      "destination": "/homesfy-chat-buddy/apps/dashboard/dist/assets/$1"
     },
     {
-      "src": "/(.*)",
-      "dest": "/homesfy-chat-buddy/apps/dashboard/dist/index.html",
-      "headers": {
-        "Cache-Control": "public, max-age=0, must-revalidate"
-      }
+      "source": "/(.*)",
+      "destination": "/homesfy-chat-buddy/apps/dashboard/dist/index.html"
     }
   ],
   "headers": [
+    {
+      "source": "/widget.js",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/javascript; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
+      "source": "/style.css",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/css; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/api/(.*)",
     {
       "source": "/api/(.*)",
       "headers": [

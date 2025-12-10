@@ -1,1 +1,10 @@
-{}
+{
+  "name": "homesfy-chat-buddy",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm run build:widget && npm run build:dashboard",
+    "build:widget": "cd apps/widget && npm install && npm run build",
+    "build:dashboard": "cd apps/dashboard && npm install && npm run build"
+  }
+}

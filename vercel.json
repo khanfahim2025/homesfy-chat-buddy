@@ -1,6 +1,9 @@
 {
   "version": 2,
+  "buildCommand": "npm run build",
   "outputDirectory": "apps/dashboard/dist",
+  "installCommand": "npm install",
+  "framework": null,
   "builds": [
     {
       "src": "apps/api/api/index.js",
@@ -8,22 +11,6 @@
       "config": {
         "maxDuration": 30,
         "memory": 1024
-      }
-    },
-    {
-      "src": "apps/widget/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist",
-        "buildCommand": "npm install && npm run build"
-      }
-    },
-    {
-      "src": "apps/dashboard/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist",
-        "buildCommand": "npm install && npm run build"
       }
     }
   ],

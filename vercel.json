@@ -21,11 +21,11 @@
     },
     {
       "source": "/widget.js",
-      "destination": "/apps/widget/dist/widget.js"
+      "destination": "/widget.js"
     },
     {
       "source": "/style.css",
-      "destination": "/apps/widget/dist/style.css"
+      "destination": "/style.css"
     },
     {
       "source": "/assets/(.*)",
